@@ -1,27 +1,44 @@
 import React, { Component } from 'react';
-import $ from 'jquery'
+import { Link, withRouter } from 'react-router-dom'
+import ReactDOM from 'react-dom'
+import PropTypes  from "prop-types";
+// ------------------------ CSS y Boostrap ------------------------------------
 import '../css/style.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-// get our fontawesome imports
+// ------------------------ JQUERY ------------------------------------
+import $ from 'jquery'
+// ------------------------ Iconos e imagenes ------------------------------------
 import { faKey, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import logo from '../img/usuario-logueo.png'
 
+class login extends Component{    
 
+    static propiedades = {
+        match: PropTypes.object.isRequired,
+        location: PropTypes.object.isRequired,
+        history: PropTypes.object.isRequired
+      };
+    
+    constructor(props){        
+        super();      
+    }    
+    
+    modificarFondo() {        
+        if(($('body')).attr('id') === 'body-comun') {
+            $('#body-comun').attr("id", "imagen-fondo");    
+        }else $('#miBody').attr("id", "imagen-fondo");
+    }
 
-function modificarFondo() {
-    $('#miBody').attr("id", "imagen-fondo");
-}
-
-class login extends Component{
-    constructor(props){
-        super();
+    iniciarSesion() {                    
+        this.props.history.push('/UsuariosClientes');               
     }
     
-    render(){        
-        modificarFondo();
+    render(){ 
+        const { match, location, history } = this.props;       
+        this.modificarFondo();
         return ( 
-            <div>   
+            <div>                 
                 <div className="capa-back"> </div>                    
                 <div className="container">
                     <div className="row">
@@ -33,7 +50,7 @@ class login extends Component{
                                         <h2>Acme Corporation</h2>
                                     </div>
                                     {/* Formulario para Login */}
-                                    <form action="" method="post" name="login">
+                                    <form action="" method="" name="login">
                                         {/* Cuadro para el usuario */}
                                         <div className="form-group">                        
                                             <label className="text-left"><strong>Usuario</strong></label>                      
@@ -61,7 +78,7 @@ class login extends Component{
                                             <p className="text-left"><a href="https://www.google.com/">Olvidaste tu contraseña?</a></p>
                                         </div>
                                         <div className="col-md-12 text-center ">
-                                            <button type="submit" className=" btn btn-block mybtn btn-primary tx-tfm">ACCEDER</button>
+                                            <button type="button" onClick={() => this.iniciarSesion()} className=" btn btn-block mybtn btn-primary tx-tfm">ACCEDER</button>
                                         </div>
                                         <div className="col-md-12 ">
                                             <div className="login-or text-center">
@@ -88,4 +105,4 @@ class login extends Component{
         );
     }    
 }
-export default login;
+export default withRouter(login);

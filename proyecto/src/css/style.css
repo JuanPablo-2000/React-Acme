@@ -8,6 +8,11 @@
     opacity: 1;
 }
 
+#imagen-fondo1 {  
+  background-image: null;
+  opacity: 1;
+}
+
 .centrar {    
     margin-top: 10%;     
 }
