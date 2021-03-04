@@ -16,6 +16,10 @@
   opacity: 1;
 }
 
+.logincentrado {
+  margin: 40px;
+}
+
 .tarjeta {
   height: 580%;
 }
@@ -67,9 +71,7 @@
   margin-right: 5px;
 }
 
-<<<<<<< HEAD
 /* ------------------------------- Clientes------------------------------------------ */
-=======
 /* ------------------------------- Inicio ------------------------------------------ */
 
 #body-comun {  
@@ -83,7 +85,6 @@
   -webkit-overflow-scrolling: touch;
   -webkit-font-smoothing: antialiased !important;
 }
->>>>>>> f6d4e2f32f2803e2ecf9f002ce7b822050f62522
 
 #ladoizquierdo {
   position: relative;
@@ -91,7 +92,6 @@
   margin: auto auto;
 }
 
-<<<<<<< HEAD
 #imgusuario {
   width: 200px;
   height: 180px;
@@ -119,12 +119,11 @@
 #t01 th {
   background-color: black;
   color: white;
-=======
-@media (max-width : 640px) {
-  .tt-fullHeight{
-      height: 560px !important;
+  @media (max-width : 640px) {
+    .tt-fullHeight{
+        height: 560px !important;
+    }
   }
->>>>>>> f6d4e2f32f2803e2ecf9f002ce7b822050f62522
 }
 
 #centrando {
@@ -161,7 +160,6 @@ th, td {
   padding: 0;
   position: relative;
   text-align: center;
-<<<<<<< HEAD
   justify-content: center center;
   font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
@@ -453,9 +451,7 @@ img {
 /*
 .modal {
   display: none;
-=======
   
->>>>>>> f6d4e2f32f2803e2ecf9f002ce7b822050f62522
 }
 
 #home:before {
