@@ -20,9 +20,9 @@ class login extends Component{
         history: PropTypes.object.isRequired
       };
     
-    constructor(props){        
-        super();      
-    }    
+    constructor(props){
+        super();
+    }
     
     modificarFondo() {        
         if(($('body')).attr('id') === 'body-comun') {
@@ -31,7 +31,7 @@ class login extends Component{
     }
 
     iniciarSesion() {                    
-        this.props.history.push('/UsuariosClientes');               
+        this.props.history.push('/UsuariosClientes');
     }
     
     render(){ 
@@ -78,7 +78,8 @@ class login extends Component{
                                             <p className="text-left"><a href="https://www.google.com/">Olvidaste tu contraseña?</a></p>
                                         </div>
                                         <div className="col-md-12 text-center ">
-                                            <button type="button" onClick={() => this.iniciarSesion()} className=" btn btn-block mybtn btn-primary tx-tfm">ACCEDER</button>
+                                            <button type="button" onClick={() => this.iniciarSesion()} 
+                                            className=" btn btn-block mybtn btn-primary tx-tfm">ACCEDER</button>
                                         </div>
                                         <div className="col-md-12 ">
                                             <div className="login-or text-center">
