@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import $ from 'jquery'
 import '../css/style.css'
+import '../css/responsive.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import '../js/scripts'
+import {  faFacebookF, faTwitter, faInstagram, faPinterest, faFacebookMessenger} from "@fortawesome/free-brands-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class UsuarioCliente extends Component{
     constructor(props){
@@ -12,48 +16,34 @@ class UsuarioCliente extends Component{
         $('#imagen-fondo').attr("id", "body-comun");                
     }
 
+    hola(){
+        $(".tt-fullHeight").height($(window).height());
+    }
+
     render(){
-        this.modificarFondo();
-        return(            
-            <div>
-                <div class="d-flex" id="wrapper">
-                    <div class="bg-light border-right" id="sidebar-wrapper">
-                        <div>
-                            <img src="assets/img/Corvette.jpg" alt="Automovil" id="imgauto" />
-                            <div class="sidebar-heading">Compra - Venta Acme. </div>
-                        </div>
-  
-                        <div class="list-group list-group-flush">
-                            <a href="#" class="list-group-item list-group-item-action bg-light">Configuración</a>
-                            <a href="#" class="list-group-item list-group-item-action bg-light">Historiales</a>
-                            <a href="#" class="list-group-item list-group-item-action bg-light">Clientes</a>
-                            <a href="#" class="list-group-item list-group-item-action bg-light">Propietarios de Vehículos</a>
-                            <a href="#" class="list-group-item list-group-item-action bg-light">Precios de compra y venta</a>
-                            <a href="#" class="list-group-item list-group-item-action bg-light">Fechas de publicación</a>
-                        </div>
-                    </div>
+        this.modificarFondo();  
+        this.hola();      
+        return(               
+            <section id="home" className="tt-fullHeight" data-stellar-vertical-offset="50" data-stellar-background-ratio="0.2">
+                <div className="intro">
+                    <div className="intro-sub">Concesionario</div>
+                    <h1>Acme <span>Corporation</span></h1>
+                    <p></p>
 
-                    <div id="page-content-wrapper">
-
-                        <nav class="navbar navbar-expand-lg bg-light border-bottom">
-                            <button class="btn btn-primary" id="menu-toggle">Menu</button>
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul class="navbar-nav ml-auto mt-2 mt-lg-0" id="ladoizquierdo">                        
-                                    <li class="nav-item" >
-                                        <a class="nav-link" href="#">Inicio</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Información</a>
-                                    </li>
-                                    <li class="nav-item">
-                                    <a class="nav-link" href="#">Ayuda</a>
-                                    </li>
-                            </ul>
-                            </div>
-                        </nav>
+                    <div className="social-icons">
+                        <ul className="list-inline">
+                        <li><a href="#"><i className="fa"><FontAwesomeIcon icon={faFacebookF} /></i></a></li>
+                        <li><a href="#"><i className="fa"><FontAwesomeIcon icon={faTwitter} /></i></a></li>
+                        <li><a href="#"><i className="fa"><FontAwesomeIcon icon={faInstagram} /></i></a></li>
+                        <li><a href="#"><i className="fa"><FontAwesomeIcon icon={faPinterest} /></i></a></li>
+                        <li><a href="#"><i className="fa"><FontAwesomeIcon icon={faFacebookMessenger} /></i></a></li>
+                        </ul>
                     </div>
-                </div>
-            </div>  
+                </div>	
+                <div className="mouse-icon">
+                    <div className="wheel"></div>
+                </div>	
+            </section>                        
         );
     }
 }
