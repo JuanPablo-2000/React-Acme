@@ -20,9 +20,9 @@ class login extends Component{
         history: PropTypes.object.isRequired
       };
     
-    constructor(props){
-        super();
-    }
+    constructor(props){        
+        super();      
+    }    
     
     modificarFondo() {        
         if(($('body')).attr('id') === 'body-comun') {
@@ -31,11 +31,7 @@ class login extends Component{
     }
 
     iniciarSesion() {                    
-        this.props.history.push('/UsuariosClientes');
-    }
-
-    Crud(){
-        this.props.history.push('/Crud');
+        this.props.history.push('/UsuariosClientes');               
     }
     
     render(){ 
@@ -46,7 +42,7 @@ class login extends Component{
                 <div className="capa-back"> </div>                    
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-5 mx-auto logincentrado">
+                        <div className="col-md-5 mx-auto centrar">
                             <div>
                                 <div className="myform form">
                                     <div className="logo mb-3 text-center">
@@ -79,11 +75,10 @@ class login extends Component{
                                         </div>
                                         {/* Opciones de la parte inferior */}
                                         <div className="form-group">
-                                            <p className="text-left"><a onClick={() => this.Crud()} href="">Olvidaste tu contraseña?</a></p>
+                                            <p className="text-left"><a href="https://www.google.com/">Olvidaste tu contraseña?</a></p>
                                         </div>
                                         <div className="col-md-12 text-center ">
-                                            <button type="button" onClick={() => this.iniciarSesion()} 
-                                            className=" btn btn-block mybtn btn-primary tx-tfm">ACCEDER</button>
+                                            <button type="button" onClick={() => this.iniciarSesion()} className=" btn btn-block mybtn btn-primary tx-tfm">ACCEDER</button>
                                         </div>
                                         <div className="col-md-12 ">
                                             <div className="login-or text-center">

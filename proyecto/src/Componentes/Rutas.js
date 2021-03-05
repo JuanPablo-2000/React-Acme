@@ -2,7 +2,6 @@ import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Login from '../Vistas/Login'
 import Usuarios from '../Vistas/Usuarios'
-import Crud from '../Vistas/Crud'
 
 function Rutas()  {
     return(        
@@ -10,8 +9,7 @@ function Rutas()  {
             <Switch>
                 <Route exact path="/" component={Login} />
                 <Route path="/Login" component={Login} />
-                <Route path="/UsuariosClientes" component={Usuarios} />
-                <Route path="/Crud" component={Crud} />
+                <Route path="/UsuariosClientes" component={Usuarios} />            
             </Switch>
         </BrowserRouter>
     );  

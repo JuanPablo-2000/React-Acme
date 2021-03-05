@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import $ from 'jquery'
-//----------- CSS y Booststarp ----------
 import '../css/style.css'
 import '../css/responsive.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -8,14 +7,10 @@ import '../js/scripts'
 import {  faFacebookF, faTwitter, faInstagram, faPinterest, faFacebookMessenger} from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-//----------- Iconos e Imagenes ----------
-import Corvette from '../img/Corvette.jpg'
-import Usuario from '../img/usuario.png'
-
 class UsuarioCliente extends Component{
     constructor(props){
         super();
-    }
+    }    
 
     modificarFondo() {     
         $('#imagen-fondo').attr("id", "body-comun");                
