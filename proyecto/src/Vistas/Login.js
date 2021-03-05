@@ -33,6 +33,10 @@ class login extends Component{
     iniciarSesion() {                    
         this.props.history.push('/UsuariosClientes');               
     }
+
+    CrudVehiculos() {                    
+        this.props.history.push('/CrudVehiculos');               
+    }
     
     render(){ 
         const { match, location, history } = this.props;       
@@ -75,7 +79,7 @@ class login extends Component{
                                         </div>
                                         {/* Opciones de la parte inferior */}
                                         <div className="form-group">
-                                            <p className="text-left"><a href="https://www.google.com/">Olvidaste tu contraseña?</a></p>
+                                            <p className="text-left"><a onClick={() => this.CrudVehiculos()} href="">Olvidaste tu contraseña?</a></p>
                                         </div>
                                         <div className="col-md-12 text-center ">
                                             <button type="button" onClick={() => this.iniciarSesion()} className=" btn btn-block mybtn btn-primary tx-tfm">ACCEDER</button>
@@ -93,7 +97,7 @@ class login extends Component{
                                             </p>
                                         </div>
                                         <div className="col-md-12">
-                                            <p className="text-center">¿No tienes cuenta? <a href="https://www.google.com/" id="signup">Registrate aquí</a></p>
+                                            <p className="text-center">¿No tienes cuenta? <a  href="#" id="signup">Registrate aquí</a></p>
                                         </div>
                                     </form>
                                 </div>                                
