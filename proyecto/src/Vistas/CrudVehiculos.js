@@ -37,11 +37,11 @@ function Navbar() {
     };
   
     return (
-      <>
+      <div className="contenedor">
         <nav className='navbar'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
             ACME
-            <i class='fab fa-firstdraft' />
+            <i className  ='fab fa-firstdraft' />
           </Link>
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
@@ -90,7 +90,7 @@ function Navbar() {
           </ul>
           <Button />
         </nav>
-      </>
+      </div>
     );
   }
   

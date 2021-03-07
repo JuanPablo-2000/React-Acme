@@ -9,3 +9,33 @@ import $ from 'jquery'
     });
 
 }());
+
+/*------------------------------------- Animacion de scroll -----------------------------------------*/
+(function () {
+    $('a[href*=\\#]').bind("click", function(e){
+        var anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $(anchor.attr('href')).offset().top
+        }, 1000);
+        e.preventDefault();
+    });
+}());
+
+/*------------------------------------- Buscador - Vacio  -----------------------------------------*/
+(function (){
+    if($('buscador').val === "") {
+        console.log("Esta vacio");
+    }else {
+        console.log("Tiene informacion");
+    }    
+}());
+
+/*------------------------------------- Tipo de persona  -----------------------------------------*/
+(function (){
+    $(".opcion").change(function() {
+        console.log("GHola", this.val);
+    })            
+}());
+
+
+/*------------------------------------- Datepicker  -----------------------------------------*/
