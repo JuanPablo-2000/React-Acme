@@ -1,41 +1,21 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
 
-import { Button } from '../Componentes/Button';
-import Dropdown from '../Componentes/Dropdown';
+import Navbar from '../Componentes/Navbar';
+import Formulario from '../Componentes/Formulario';
 
 //----------- jQuery --------------------
-import $ from 'jquery'
+
 
 //----------- CSS y Booststarp ----------
-import '../css/style.css'
-import '../css/Navbar.css'
+
+//import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 //--------------- Iconos e Imagenes ------------
 
-function Navbar() {
-    const [click, setClick] = useState(false);
-    const [dropdown, setDropdown] = useState(false);
+class CrudVehiculos extends Component {
   
-    const handleClick = () => setClick(!click);
-    const closeMobileMenu = () => setClick(false);
-  
-    const onMouseEnter = () => {
-      if (window.innerWidth < 960) {
-        setDropdown(false);
-      } else {
-        setDropdown(true);
-      }
-    };
-  
-    const onMouseLeave = () => {
-      if (window.innerWidth < 960) {
-        setDropdown(false);
-      } else {
-        setDropdown(false);
-      }
-    };
-  
+  render(){
     return (
       <div className="contenedor">
         <nav className='navbar'>
@@ -93,5 +73,6 @@ function Navbar() {
       </div>
     );
   }
+}
   
-  export default Navbar;
+  export default CrudVehiculos;

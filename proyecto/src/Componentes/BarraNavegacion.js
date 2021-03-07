@@ -257,61 +257,11 @@ class BarraNavegacion extends Component {
         );             
     }
 
-    formularioCRUD(){        
-        return(
-            <div className="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
-                <div className="wrapper wrapper--w780">
-                    <div className="card card-3">
-                        <div className="card-heading">
-                            {this.informacionBasica()}
-                        </div>                        
-                        <div className="card-body">
-                            <h2 className="titulo-crud">Clientes y Personal activo </h2>
-                            <form method="POST">
-                                <div className="input-group">
-                                    <input className="input--style-3" type="text" placeholder="Nombre" name="nombre" />
-                                </div>
-                                <div className="input-group">
-                                    <input className="input--style-3" type="text" placeholder="Apellido" name="apellido" />
-                                </div>
-                                <div className="input-group">
-                                    <input className="input--style-3" type="text" placeholder="Cedula" name="cedula" />
-                                </div>
-                                <div className="input-group">
-                                    <input className="input--style-3" type="email" placeholder="Correo electrónico" name="email" />
-                                </div>
-                                <div className="input-group">
-                                    <input className="input--style-3" type="text" placeholder="Teléfono" name="telefono" />
-                                </div>
-                                <div className="input-group">                                                                            
-                                        <select value={this.state.value} name="tipoPersona" className="opcion dropdown-toggle" onChange={this.handleChange}>
-                                            <option value="Tipo" hidden>Tipo de persona</option>
-                                            <option value="empleado">Empleado</option> 
-                                            <option value="cliente">Cliente</option>                                            
-                                            <option value="usuario">Usuario para el aplicativo</option>
-                                        </select>   
-                                        <div id="content-sublist">
-                                            {this.subListaTipo()}
-                                        </div>                                        
-                                    </div>
-                                <div className="p-t-10 btn-group text-center">
-                                    <button className="btn btn--pill btn--green " type="submit">Crear</button>                                    
-                                    <button className="btn btn--pill btn--green " type="submit">Actualizar</button>                                    
-                                    <button className="btn btn--pill btn--green " type="submit">Eliminar</button>                                    
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        );
-    }
-
     render() {         
         return(       
             <>
                 {this.menuLateral()}
-            </>
+            </>    
         );
     }
 };
