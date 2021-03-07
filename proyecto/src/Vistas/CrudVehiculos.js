@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import Navbar from '../Componentes/Navbar';
 import Formulario from '../Componentes/Formulario';
 
 //----------- jQuery --------------------
@@ -19,7 +18,6 @@ class CrudVehiculos extends Component {
     return (
         
         <div>
-          <Navbar />
           <Formulario /> 
         </div>
       );
