@@ -1,7 +1,6 @@
 /* ------------------------------- Generales ------------------------------------------ */
 
 
-
 /* ------------------------------- Login ------------------------------------------ */
 #imagen-fondo {
     background-image: url("../img/fondo3.jpg");
@@ -141,7 +140,7 @@
 }
 
 .intro h1 span{
-  color: #68c3a3;
+  color: #d6a74c;
 }
 
 .intro p{
@@ -222,7 +221,7 @@
 }
 
 .social-icons a i:hover::after{
-  background: #68c3a3;
+  background: #f8b739;
   border: 1px solid transparent;
   z-index: -1;
 }
@@ -792,6 +791,7 @@ a[data-toggle="collapse"] {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   border:1px solid #EEEEEE;
+  border-bottom: none;
   position: relative;
 }
 
@@ -829,6 +829,10 @@ a[data-toggle="collapse"] {
 
 .biography ul li:last-child{
   border-bottom:0;
+}
+
+.lista-datos > li {
+  list-style: none;
 }
 
 
@@ -1059,4 +1063,275 @@ select.opcion option {
 
 .contenedor-botones {
   padding: 20px;
+}
+
+#disparador {  
+  appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+  color: #fff;  
+  text-decoration: none;
+  width: 100px;
+}
+
+#content-sublist {
+  padding-left: 8px;
+}
+
+
+/* ------------------------------- Pagina de Propietarios  ------------------------------------------ */
+/* ------------------------------- Dueño antiguo  ------------------------------------------ */
+.cover {
+  background-image: url(https://images.unsplash.com/photo-1530305408560-82d13781b33a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80);
+  background-size: cover;
+  background-repeat: no-repeat
+}
+
+.nombre-antiguo {
+  font-family: "Poppins", Arial, sans-serif;
+  color: #fff;
+  margin-right: 35px;
+}
+
+.mb-6 {
+  color: rgb(2, 2, 2);
+}
+
+.profile-head {
+  transform: translateY(9.5rem)
+}
+
+/* ------------------------------- Dueño nuevo  ------------------------------------------ */
+.profile-card-4 {    
+    background-color: #FFF;
+    border-radius: 5px;    
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;    
+    cursor: pointer;
+}
+
+.profile-card-4 img {
+    transition: all 0.25s linear;
+}
+
+.profile-card-4 .profile-content {
+    position: relative;
+    padding: 15px;
+    background-color: #FFF;
+}
+
+.profile-card-4 .profile-name {
+    font-weight: bold;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: -70px;
+    color: #FFF;
+    font-size: 17px;
+}
+
+.profile-card-4 .profile-name p {
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+}
+
+.profile-card-4 .profile-description {
+    color: #777;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.profile-card-4 .profile-overview {
+    padding: 15px 0px;
+}
+
+.profile-card-4 .profile-overview p {
+    font-size: 10px;
+    font-weight: 600;
+    color: #777;
+}
+
+.profile-card-4 .profile-overview h4 {
+    color: #273751;
+    font-weight: bold;
+}
+
+.profile-card-4 .profile-content::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    top: -10px;
+    left: 0px;
+    right: 0px;
+    background-color: #FFF;
+    z-index: 0;
+    transform: skewY(3deg);
+}
+
+.profile-card-4:hover img {
+    transform: rotate(5deg) scale(1.1, 1.1);
+    filter: brightness(110%);
+}
+
+.unico {
+  width: 100% !important;
+ }
+
+ .nombre-nuevo {
+   padding-top: 15px;
+   color: black;
+ }
+
+
+ /* ------------------------------- Historiales  ------------------------------------------ */
+ /* ------------------------------- DatePicker  ------------------------------------------ */
+ .fechas-tiempo {
+   margin-right: 25px;
+ }
+
+ .react-datepicker-wrapper,
+ .react-datepicker__input-container,
+ .react-datepicker__input-container input {
+   width: 175px;
+ }
+
+ .react-datepicker__close-icon::before,
+ .react-datepicker__close-icon::after {
+   background-color: red;
+ }
+
+ .graficas {
+   position: relative;
+ }
+
+ /* ------------------------------- Caroos  ------------------------------------------ */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic);
+.blog-card {
+  width: 350px;
+  height: 500px;
+  position: absolute;   
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+.blog-card.spring-fever {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1765/bg-blog-card.jpg) no-repeat;
+}
+.blog-card .color-overlay {
+  /* Rectangle 11: */
+  background: rgba(84, 104, 110, 0.4);
+  width: 350px;
+  height: 500px;
+  position: absolute;
+  z-index: 10;  
+  transition: background 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);
+}
+.blog-card .gradient-overlay {
+  /* bg-gradient: */
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 21%);
+  background-image: -moz-linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 21%);
+  background-image: -o-linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 21%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 21%);
+  width: 350px;
+  height: 500px;
+  position: absolute;
+  top: 350px;
+  left: 0;
+  z-index: 15;
+}
+.blog-card:hover .card-info {
+  opacity: 1;
+  bottom: 120px;
+}
+.blog-card:hover .color-overlay {
+  background: rgba(84, 104, 110, 0.8);
+}
+
+.title-content {
+  text-align: center;
+  margin: 70px 0 0 0;
+  position: absolute;
+  z-index: 20;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #9cc9e3;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 0;
+}
+
+hr {
+  width: 50px;
+  height: 3px;
+  margin: 20px auto;
+  border: 0;
+  background: #d0bb57;
+}
+
+.title-content > .intro {
+  width: 170px;
+  margin: 0 auto;
+  color: #dce3e7;
+  font-family: "Droid Serif", serif;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 18px;
+}
+
+.card-info {
+  width: 100%;
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  margin: 0 auto;
+  padding: 0 50px;
+  color: #dce3e7;
+  font-family: "Droid Serif", serif;
+  font-style: 16px;
+  line-height: 24px;
+  z-index: 20;
+  opacity: 0;
+  transition: bottom 0.3s, opacity 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);
+}
+
+.utility-info {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  z-index: 20;
+}
+
+.utility-list {
+  list-style-type: none;
+  margin: 0 0 30px 20px;
+  padding: 0;
+  width: 100%;
+}
+.utility-list li {
+  margin: 0 15px 0 0;
+  padding: 0 0 0 22px;
+  display: inline-block;
+  color: #dce3e7;
+  font-family: "Roboto", sans-serif;
+}
+.utility-list li.comments {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1765/icon-chat.svg) no-repeat 0 0.1em;
+}
+.utility-list li.date {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1765/icon-calendar.svg) no-repeat 0 0.1em;
+}
+
+.auto .uni {
+  list-style: none !important;
+  padding-right: 25px;
 }

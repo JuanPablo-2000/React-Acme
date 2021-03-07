@@ -16,7 +16,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import foto from '../img/myphoto.jpg';
 
 
-
 class BarraNavegacion extends Component {
     constructor(props){
         super(props); 
@@ -27,19 +26,49 @@ class BarraNavegacion extends Component {
         );                   
 
         this.state = {
-            valorOpcion: '',
+            value: '',
         }
 
         this.handleChange = this.handleChange.bind(this);
     }
-    
-    handleChange(event) {    
-        this.setState({
-            valorOpcion: event.target.value
-        });  
-        console.log(this.state.valorOpcion);
-    }    
 
+    botonActualizar(){
+        console.log("Hola");
+        //this.appendData();
+        
+    }
+
+    subListaTipo() {
+        if(this.state.value == "usuario"){
+            return(
+                <>      
+                <a href="#usuarios-nuevos" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle" id="disparador">Registrar Datos</a>          
+                {this.auxiliar()}
+                <ul className="collapse list-unstyled components input--style-3" id="usuarios-nuevos">
+                    <div className="input-group">
+                        <input className="input--style-3" type="text" placeholder="Nombre de Usuario" name="nombre-usuario" />
+                    </div>
+                    <div className="input-group">
+                        <input className="input--style-3" type="text" placeholder="Contraseña" name="contrasenia" />
+                    </div>
+                </ul>
+                </>
+            );
+        }
+    }
+
+    auxiliar() {
+        $('#disparador').on('click', function() {(window.location.href="#usuarios-nuevos")});
+        $('#disparador').trigger('click');
+    }
+
+    handleChange(event) {            
+        this.state.value = event.target.value;   
+        this.setState({value: event.target.value});    
+        console.log(this.state.value);
+
+    }    
+    
     barraLateral() {
         let fullHeight = function() {
             $('.js-fullheight').css('height', $(window).height());
@@ -75,11 +104,7 @@ class BarraNavegacion extends Component {
         );
     }
 
-    botonActualizar(){
-        console.log("Hola");
-        //this.appendData();
-        
-    }
+  
 
     informacionBasica(){
         return(
@@ -89,68 +114,22 @@ class BarraNavegacion extends Component {
                     <div className="myphoto">                           
                         <img src={foto} alt="Perfil" className="perfil" />                             
                     </div>
-                    <ul>
-                        <li><strong>Nam:</strong> John Doe</li>
-                        <li><strong>Date of birth:</strong> 05 Dec 1993</li>
-                        <li><strong>Address:</strong> 239/2 Awesome Street, USA</li>
-                        <li><strong>Nationality:</strong> American</li>
-                        <li><strong>Phone:</strong> (000) 1234 56789</li>
-                        <li><strong>Email:</strong> yourmail@iamx.com</li>
+                    <ul className="lista-datos">
+                        <li><strong>Nombres:</strong> John Doe</li>                        
+                        <li><strong>Apellidos:</strong> Gonzales Jimenez</li>
+                        <li><strong>Cédula:</strong> 2.158.153</li>
+                        <li><strong>Correo eléctronico:</strong> jhon@gmail.com</li>
+                        <li><strong>Télefono</strong> 3214569852</li>
+                        <li><strong>Usuario</strong> ----------</li>
+                        <li><strong>Contraseña</strong> ########</li>
                     </ul>
                 </div>
             </div>
         );
-    }       
-
-    formularioCRUD(){        
+    } 
+    
+    menuLateral() {
         return(
-            <div className="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
-                <div className="wrapper wrapper--w780">
-                    <div className="card card-3">
-                        <div className="card-heading">
-                            {this.informacionBasica()}
-                        </div>                        
-                        <div className="card-body">
-                            <h2 className="titulo-crud">Clientes y Personal activo </h2>
-                            <form method="POST">
-                                <div className="input-group">
-                                    <input className="input--style-3" type="text" placeholder="Nombre" name="nombre" />
-                                </div>
-                                <div className="input-group">
-                                    <input className="input--style-3" type="text" placeholder="Apellido" name="apellido" />
-                                </div>
-                                <div className="input-group">
-                                    <input className="input--style-3" type="text" placeholder="Cedula" name="cedula" />
-                                </div>
-                                <div className="input-group">
-                                    <input className="input--style-3" type="email" placeholder="Correo electrónico" name="email" />
-                                </div>
-                                <div className="input-group">
-                                    <input className="input--style-3" type="text" placeholder="Teléfono" name="telefono" />
-                                </div>
-                                <div className="input-group">                                                                            
-                                        <select value={this.state.valorOpcion} name="tipoPersona" className="opcion" onChange={this.handleChange}>                                            
-                                            <option value="Tipo" hidden>Tipo de persona</option>
-                                            <option value="Cliente">Cliente</option>
-                                            <option value="Actualizar">Actualizar</option>                                            
-                                            <option value="Usuario">Usuario para el aplicativo</option>                                            
-                                        </select>                                                                          
-                                    </div>
-                                <div className="p-t-10 btn-group text-center">
-                                    <button className="btn btn--pill btn--green " type="submit">Crear</button>                                    
-                                    <button className="btn btn--pill btn--green " type="submit">Actualizar</button>                                    
-                                    <button className="btn btn--pill btn--green " type="submit">Eliminar</button>                                    
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        );
-    }
-
-    render() {         
-        return(       
             <div>
                 <hr className="separador"></hr>                
                 <div className="wrapper d-flex align-items-stretch">                     
@@ -164,7 +143,7 @@ class BarraNavegacion extends Component {
                                     
                                     <ul className="collapse list-unstyled" id="homeSubmenu">
                                         <li>
-                                            <a href="#">Venta</a>
+                                            <a href="Historial-venta">Venta</a>
                                         </li>
                                         <li>
                                             <a href="#">Compra</a>
@@ -203,7 +182,7 @@ class BarraNavegacion extends Component {
                                     <a href="#crudSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">CRUD</a>
                                     <ul className="collapse list-unstyled" id="crudSubmenu">
                                         <li>
-                                            <a href="#">CRUD de usuarios y clientes</a>
+                                            <a href="UsuariosClientes">CRUD de usuarios y clientes</a>
                                         </li>
                                         <li>
                                             <a href="#">CRUD de vehiculos</a>
@@ -212,7 +191,7 @@ class BarraNavegacion extends Component {
                                 </li>
                                 {/* ------------------------- ITEM 5 ------------------------- */}
                                 <li>
-                                    <a href="#">Propietarios</a>
+                                    <a href="Propietarios">Propietarios</a>
                                 </li>
                                 {/* ------------------------- ITEM 6 ------------------------- */}
                                 <li>
@@ -274,7 +253,65 @@ class BarraNavegacion extends Component {
                         {this.formularioCRUD()}
                     </div> 
                 </div> 
-            </div>          
+            </div>    
+        );             
+    }
+
+    formularioCRUD(){        
+        return(
+            <div className="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
+                <div className="wrapper wrapper--w780">
+                    <div className="card card-3">
+                        <div className="card-heading">
+                            {this.informacionBasica()}
+                        </div>                        
+                        <div className="card-body">
+                            <h2 className="titulo-crud">Clientes y Personal activo </h2>
+                            <form method="POST">
+                                <div className="input-group">
+                                    <input className="input--style-3" type="text" placeholder="Nombre" name="nombre" />
+                                </div>
+                                <div className="input-group">
+                                    <input className="input--style-3" type="text" placeholder="Apellido" name="apellido" />
+                                </div>
+                                <div className="input-group">
+                                    <input className="input--style-3" type="text" placeholder="Cedula" name="cedula" />
+                                </div>
+                                <div className="input-group">
+                                    <input className="input--style-3" type="email" placeholder="Correo electrónico" name="email" />
+                                </div>
+                                <div className="input-group">
+                                    <input className="input--style-3" type="text" placeholder="Teléfono" name="telefono" />
+                                </div>
+                                <div className="input-group">                                                                            
+                                        <select value={this.state.value} name="tipoPersona" className="opcion dropdown-toggle" onChange={this.handleChange}>
+                                            <option value="Tipo" hidden>Tipo de persona</option>
+                                            <option value="empleado">Empleado</option> 
+                                            <option value="cliente">Cliente</option>                                            
+                                            <option value="usuario">Usuario para el aplicativo</option>
+                                        </select>   
+                                        <div id="content-sublist">
+                                            {this.subListaTipo()}
+                                        </div>                                        
+                                    </div>
+                                <div className="p-t-10 btn-group text-center">
+                                    <button className="btn btn--pill btn--green " type="submit">Crear</button>                                    
+                                    <button className="btn btn--pill btn--green " type="submit">Actualizar</button>                                    
+                                    <button className="btn btn--pill btn--green " type="submit">Eliminar</button>                                    
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
+    render() {         
+        return(       
+            <>
+                {this.menuLateral()}
+            </>
         );
     }
 };

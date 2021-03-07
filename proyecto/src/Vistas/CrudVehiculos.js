@@ -15,14 +15,11 @@ import Formulario from '../Componentes/Formulario';
 class CrudVehiculos extends Component {
   
   render(){
-    return (
-        
-        <div>
-          <Formulario /> 
-        </div>
-      );
-    }
-    
+    return ( 
+      <>
+      </>
+    );
+  }
 }
   
   export default CrudVehiculos;
