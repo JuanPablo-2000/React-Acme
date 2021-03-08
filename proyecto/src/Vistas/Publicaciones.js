@@ -1,24 +1,21 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 
 import Inicio from '../Componentes/Inicio-img'
-
 // ------------------------ JQuery ------------------------------------
 import $ from 'jquery'
 
 // ------------------------ CSS y Boostrap ------------------------------------
 
-
 // ------------------------ Iconos ------------------------------------
-import { faBars, faSearch, faThumbsDown, faStar, faStarHalf, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faSearch, faThumbsDown, faStar, faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
-// ------------------------ Imagenes ------------------------------------
-import foto from '../img/carro.png';
+// ------------------------ Imagenes -----------------------------------
+import foto from '../img/Corvette.jpg';
 
 
-
-class Propietarios extends Component {
+class Publicaciones extends Component {
     constructor(props) {
         super(props);        
     }     
@@ -44,6 +41,75 @@ class Propietarios extends Component {
         fullHeight();
 
         $('#sidebar').toggleClass('active');       
+    }
+
+    
+    fechasPublicaciones() {
+        return(
+            <div className="">
+                <div className="row">                    
+                    <div className="float-lg-left col-lg-6">
+                        <blockquote className="blockquote blockquote-custom bg-white p-5 shadow rounded">
+                            <div className="blockquote-custom-icon bg-info shadow-sm">
+                                <i className="fa text-white">
+                                    <FontAwesomeIcon icon={faQuoteLeft}/>
+                                </i>
+                            </div>
+                            <h4 className="text-center"><strong>Fecha de compra</strong></h4>
+                            <p className="mb-0 mt-2 font-italic">
+                                Fecha: 25/Febrero/2021                                
+                            </p>
+                            <footer className="blockquote-footer pt-4 mt-4 border-top">
+                                Auto disponible en el concesionario
+                            </footer>
+                        </blockquote>
+                    </div>                    
+                    <div className="col-lg-6 desplazamiento">
+                        <blockquote className="blockquote blockquote-custom bg-white p-5 shadow rounded">
+                            <div className="blockquote-custom-icon bg-info shadow-sm">
+                                <i className="fa text-white">
+                                    <FontAwesomeIcon icon={faQuoteLeft}/>
+                                </i>
+                            </div>
+                            <h4 className="text-center"><strong>Fecha de venta</strong></h4>
+                            <p className="mb-0 mt-2 font-italic">
+                                Fecha: 25/Febrero/2021                                
+                            </p>
+                            <footer className="blockquote-footer pt-4 mt-4 border-top">
+                                Auto disponible en el concesionario
+                            </footer>
+                        </blockquote>
+                    </div>                    
+                    <div className="col-md-4 derecha_fecha_car">
+                        <h4 className="text-center"><strong>Vehiculo</strong></h4>
+                        <hr />
+                        <div className="profile-card-4 text-center">
+                            <img src={foto} className="img-responsive" />
+                            <div className="profile-content">
+                                <div className="profile-name">
+                                    Corvette
+                                </div>
+                                <div className="profile-description">
+                                    <p>Modelo: <strong>Corvette</strong></p>
+                                    <p>Marca: <strong>Chevrolet</strong></p>
+                                    <p>Placa: <strong>25DS11</strong></p>
+                                </div>
+                                <ul className="list-inline small">
+                                    <i className="fa text-dark list-inline-item">
+                                        <FontAwesomeIcon icon={faStar}/></i>
+                                    <i className="fa text-dark list-inline-item">
+                                        <FontAwesomeIcon icon={faStar}/></i>
+                                    <i className="fa text-dark list-inline-item">
+                                        <FontAwesomeIcon icon={faStar}/></i>
+                                    <i className="fa text-dark list-inline-item">
+                                        <FontAwesomeIcon icon={faStar}/></i>                                            
+                                </ul>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
     }
 
     menuLateral() {
@@ -161,130 +227,14 @@ class Propietarios extends Component {
                         </nav>
                     
                         <h2 className="section-title"></h2>
-                        {this.contenido()}  
-                        {this.propietario1()}     
-                        {this.propietario2()}     
-                    </div> 
-                </div> 
+                        <br/> <br/>                                               
+                        {this.fechasPublicaciones()}                                                                                                            
+                    </div>                     
+                </div>                 
             </div>    
+            
         );             
-    }
-
-    propietario1() {
-        return(
-            <div className="row py-5 px-6">
-                <div className="col-md-6 mx-auto">                
-                    <div className="bg-white shadow rounded overflow-hidden">
-                        <div className="px-4 pt-0 pb-4 cover">
-                            <div className="media align-items-start profile-head">
-                                <div className="profile mr-3">
-                                    <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80" alt="..." width="130" className="rounded mb-2 img-thumbnail" />                                    
-                                    <h5 className="mb-5">Juan Pablo Millan Holguin</h5>
-                                </div>
-                                <div className="w-100 text-white">
-                                    <h4 className="nombre-antiguo">Anterior Dueño</h4>                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div className="bg-light p-4 d-flex justify-content-end text-center">
-                            <ul className="list-inline small">
-                               <i className="fa text-success list-inline-item">
-                                    <FontAwesomeIcon icon={faStar}/></i>
-                                <i className="fa text-success list-inline-item">
-                                    <FontAwesomeIcon icon={faStar}/></i>
-                                <i className="fa text-success list-inline-item">
-                                    <FontAwesomeIcon icon={faStar}/></i>
-                                <i className="fa text-success list-inline-item">
-                                    <FontAwesomeIcon icon={faStar}/></i>
-                                <i className="fa text-success list-inline-item">
-                                    <FontAwesomeIcon icon={faStarHalfAlt}/></i>
-                            </ul>
-                        </div>
-                        <div className="px-4 py-5">
-                            <h5 className="mb-0">Información Personal</h5>
-                            <div className="p-4 rounded shadow-sm bg-light">
-                                <p className="font-italic mb-0">Nombres: Juan Pablo</p>
-                                <p className="font-italic mb-0">Apellidos: Millan Holguin`</p>
-                                <p className="font-italic mb-0">Cédula: 1.597.159.654</p>
-                                <p className="font-italic mb-0">Correo electrónico: juan@gmail.com</p>
-                                <p className="font-italic mb-0">Teléfonos: 3202856356</p>
-                            </div>
-                        </div>                                                
-                    </div>
-                </div>
-            </div>
-        );
-    }
-
-    contenido() {
-        return( 
-            <div className="h-10 fd">
-                <div className="d-flex justify-content-center h-100">
-                    <div className="searchbar">
-                        <input className="search_input" type="text" name="" placeholder="Buscar vehiculo ..." id="buscador"/>
-                            <a className="search_icon"><i className="fa" onClick={this.botonActualizar}>
-                                    <FontAwesomeIcon icon={faSearch}/>
-                                    </i>
-                            </a>
-                    </div>                                           
-                </div>
-            </div>
-        );
-    }
-
-    informacionBasica(){
-        return(
-            /* col-md-4 col-md-push-8 */
-            <div className="mw-100">
-                <div className="biography">
-                    <div className="myphoto profile-card-4">                           
-                        <img src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-4.jpg"/>
-                    </div>
-                    <div className="w-100 text-center">
-                        <h4 className="nombre-nuevo">Nuevo Dueño</h4>                                    
-                    </div>
-                    <ul className="lista-datos">
-                        <li><strong>Nombres:</strong> John Doe</li>                        
-                        <li><strong>Apellidos:</strong> Gonzales Jimenez</li>
-                        <li><strong>Cédula:</strong> 2.158.153</li>
-                        <li><strong>Correo eléctronico:</strong> jhon@gmail.com</li>
-                        <li><strong>Télefono</strong> 3214569852</li>
-                    </ul>
-                </div>
-            </div>
-        );
-    } 
-
-
-
-    propietario2(){        
-        return(            
-            <div className="wrapper wrapper--w100">
-                <div className="card card-3">
-                    <div className="unico card-heading">
-                        {this.caruselImg()}
-                    </div>                        
-                    <div className="card-heading">                        
-                        {this.informacionBasica()}
-                    </div>                                                
-                </div>
-            </div>           
-        );
-    }
-
-    caruselImg(){
-        return(    
-            <>
-                <div className="mw-100">
-                    <div className="biography">
-                        <div className="myphoto">                           
-                            <img src={foto}/>
-                        </div>
-                    </div>
-                </div>
-            </>           
-        );
-    }
+    }    
 };
 
-export default Propietarios;
+export default Publicaciones;

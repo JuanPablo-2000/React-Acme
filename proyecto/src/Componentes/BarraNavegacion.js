@@ -146,10 +146,10 @@ class BarraNavegacion extends Component {
                                             <a href="Historial-venta">Venta</a>
                                         </li>
                                         <li>
-                                            <a href="#">Compra</a>
+                                            <a href="Historial-compra">Compra</a>
                                         </li>
                                         <li>
-                                            <a href="#">Otros</a>
+                                        <a href="Historial-otros">Otros</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -195,7 +195,7 @@ class BarraNavegacion extends Component {
                                 </li>
                                 {/* ------------------------- ITEM 6 ------------------------- */}
                                 <li>
-                                    <a href="#">Fechas de publicación</a>
+                                    <a href="Publicaciones">Fechas de publicación</a>
                                 </li>
                             </ul>
 

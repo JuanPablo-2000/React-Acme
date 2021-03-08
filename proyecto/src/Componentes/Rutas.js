@@ -6,6 +6,9 @@ import CrudVehiculos from '../Vistas/CrudVehiculos'
 import Propietarios from '../Vistas/Propietarios'
 import Historiales from '../Vistas/Historiales'
 import Usuarios from '../Vistas/Usuarios';
+import HistorialCompra from '../Vistas/HistorialCompra'
+import HistorialOtro from '../Vistas/HistorialComparacion'
+import Publicaciones from '../Vistas/Publicaciones'
 import Venta from '../Vistas/Venta'
 import Compra from '../Vistas/Compra'
 
@@ -19,10 +22,13 @@ function Rutas()  {
                 <Route path="/UsuariosClientes" component={Usuarios} />
                 <Route path="/CrudVehiculos" component={CrudVehiculos} />           
                 <Route path="/Propietarios" component={Propietarios} /> 
+                <Route path="/Historial-venta" component={Historiales} /> 
+                <Route path="/Historial-compra" component={HistorialCompra} /> 
+                <Route path="/Historial-otros" component={HistorialOtro} /> 
+                <Route path="/Publicaciones" component={Publicaciones} /> 
                 <Route path="/Historial-venta" component={Historiales} />
                 <Route path="/Compra" component={Compra} />
                 <Route path="/Venta" component={Venta} />
-                
             </Switch>
         </BrowserRouter>
     );  

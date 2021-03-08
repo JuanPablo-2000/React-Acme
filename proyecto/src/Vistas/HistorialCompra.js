@@ -15,7 +15,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // ------------------------ Imagenes -----------------------------------
 
-class Historial extends Component {
+class HistorialCompra extends Component {
     constructor(props) {
         super(props);        
     }     
@@ -313,7 +313,7 @@ class Historial extends Component {
                         <br/> <br/>                                               
                         <Fechas />
                         <br/> <br/>    
-                        <h2>Historial de ventas</h2>
+                        <h2>Historial de compras</h2>
                         <Grafica/>
                         {this.carrosMasComprados()}                                                   
                     </div>                     
@@ -324,4 +324,4 @@ class Historial extends Component {
     }    
 };
 
-export default Historial;
+export default HistorialCompra;
