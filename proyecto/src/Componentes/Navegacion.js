@@ -142,10 +142,10 @@ class Navegacion extends Component{
                                             <a href="Historial-venta">Venta</a>
                                         </li>
                                         <li>
-                                            <a href="#">Compra</a>
+                                            <a href="Historial-compra">Compra</a>
                                         </li>
                                         <li>
-                                            <a href="#">Otros</a>
+                                            <a href="Historial-otro">Otros</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -154,10 +154,10 @@ class Navegacion extends Component{
                                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Registros</a>
                                     <ul className="collapse list-unstyled" id="pageSubmenu">
                                         <li>
-                                            <a href="#">Registro de compra</a>
+                                            <a href="Compra">Registro de compra</a>
                                         </li>
                                         <li>
-                                            <a href="#">Registro de venta</a>
+                                            <a href="Venta">Registro de venta</a>
                                         </li>                                       
                                     </ul>
                                 </li>                                
@@ -166,10 +166,10 @@ class Navegacion extends Component{
                                     <a href="#precioSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Precios</a>
                                     <ul className="collapse list-unstyled" id="precioSubmenu">
                                         <li>
-                                            <a href="#">Precio de compra</a>
+                                            <a href="Precios">Precio de compra</a>
                                         </li>
                                         <li>
-                                            <a href="#">Precio de venta</a>
+                                            <a href="Precios">Precio de venta</a>
                                         </li>                                       
                                     </ul>
                                 </li>
@@ -191,7 +191,7 @@ class Navegacion extends Component{
                                 </li>
                                 {/* ------------------------- ITEM 6 ------------------------- */}
                                 <li>
-                                    <a href="#">Fechas de publicación</a>
+                                    <a href="Publicaciones">Fechas de publicación</a>
                                 </li>
                             </ul>
 

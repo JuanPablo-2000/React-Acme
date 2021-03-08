@@ -11,6 +11,7 @@ import HistorialOtro from '../Vistas/HistorialComparacion'
 import Publicaciones from '../Vistas/Publicaciones'
 import Venta from '../Vistas/Venta'
 import Compra from '../Vistas/Compra'
+import Precios from '../Vistas/Precios'
 
 function Rutas()  {
     return(        
@@ -29,6 +30,7 @@ function Rutas()  {
                 <Route path="/Historial-venta" component={Historiales} />
                 <Route path="/Compra" component={Compra} />
                 <Route path="/Venta" component={Venta} />
+                <Route path="/Precios" component={Precios} />
             </Switch>
         </BrowserRouter>
     );  

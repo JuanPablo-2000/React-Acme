@@ -142,10 +142,10 @@ class Publicaciones extends Component {
                                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Registros</a>
                                     <ul className="collapse list-unstyled" id="pageSubmenu">
                                         <li>
-                                            <a href="#">Registro de compra</a>
+                                            <a href="Compra">Registro de compra</a>
                                         </li>
                                         <li>
-                                            <a href="#">Registro de venta</a>
+                                            <a href="Venta">Registro de venta</a>
                                         </li>                                       
                                     </ul>
                                 </li>                                
@@ -154,10 +154,10 @@ class Publicaciones extends Component {
                                     <a href="#precioSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Precios</a>
                                     <ul className="collapse list-unstyled" id="precioSubmenu">
                                         <li>
-                                            <a href="#">Precio de compra</a>
+                                            <a href="Precios">Precio de compra</a>
                                         </li>
                                         <li>
-                                            <a href="#">Precio de venta</a>
+                                            <a href="Precios">Precio de venta</a>
                                         </li>                                       
                                     </ul>
                                 </li>
@@ -169,7 +169,7 @@ class Publicaciones extends Component {
                                             <a href="UsuariosClientes">CRUD de usuarios y clientes</a>
                                         </li>
                                         <li>
-                                            <a href="#">CRUD de vehiculos</a>
+                                            <a href="CrudVehiculos">CRUD de vehiculos</a>
                                         </li>                                       
                                     </ul>
                                 </li>
