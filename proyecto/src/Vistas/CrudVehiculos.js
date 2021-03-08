@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-
-import Formulario from '../Componentes/Formulario';
+import Navegacion from '../Componentes/Navegacion'
 
 //----------- jQuery --------------------
 
@@ -17,6 +16,7 @@ class CrudVehiculos extends Component {
   render(){
     return ( 
       <>
+      <Navegacion />
       </>
     );
   }

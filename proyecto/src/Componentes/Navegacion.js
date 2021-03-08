@@ -1,22 +1,18 @@
 import React, { Component } from 'react'
 import ScriptTag from 'react-script-tag';
 // ------------------------ CSS y Boostrap ------------------------------------
-import '../css/style2.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import '../css/style2.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/js/src/collapse.js';
-import selector from '../css/style.css';
-// ------------------------ JQuery ------------------------------------
+
 import $ from 'jquery'
 
-// ------------------------ Iconos ------------------------------------
 import { faBars, faSearch, faThumbsDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-// ------------------------ Imagenes ------------------------------------
 import foto from '../img/myphoto.jpg';
 
-
-class BarraNavegacion extends Component {
+class Navegacion extends Component{
     constructor(props){
         super(props); 
         // ------------------------ Scripts ------------------------------------
@@ -170,10 +166,10 @@ class BarraNavegacion extends Component {
                                     <a href="#precioSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Precios</a>
                                     <ul className="collapse list-unstyled" id="precioSubmenu">
                                         <li>
-                                            <a href="Compra">Precio de compra</a>
+                                            <a href="#">Precio de compra</a>
                                         </li>
                                         <li>
-                                            <a href="Venta">Precio de venta</a>
+                                            <a href="#">Precio de venta</a>
                                         </li>                                       
                                     </ul>
                                 </li>
@@ -248,7 +244,7 @@ class BarraNavegacion extends Component {
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         */}
-                        {this.contenido()}
+                        
                         {/*{this.informacionBasica()}*/}
                         {this.formularioCRUD()}
                     </div> 
@@ -262,40 +258,31 @@ class BarraNavegacion extends Component {
             <div className="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
                 <div className="wrapper wrapper--w780">
                     <div className="card card-3">
-                        <div className="card-heading">
-                            {this.informacionBasica()}
-                        </div>                        
+                                               
                         <div className="card-body">
-                            <h2 className="titulo-crud">Clientes y Personal activo </h2>
+                            <h2 className="titulo-crud"> Registro de Vehículos </h2>
                             <form method="POST">
                                 <div className="input-group">
-                                    <input className="input--style-3" type="text" placeholder="Nombre" name="nombre" />
+                                    <input className="input--style-3" type="text" placeholder="Placa" name="placa" />
                                 </div>
                                 <div className="input-group">
-                                    <input className="input--style-3" type="text" placeholder="Apellido" name="apellido" />
+                                    <input className="input--style-3" type="text" placeholder="Marca" name="marca" />
                                 </div>
                                 <div className="input-group">
-                                    <input className="input--style-3" type="text" placeholder="Cedula" name="cedula" />
+                                    <input className="input--style-3" type="text" placeholder="Modelo" name="modelo" />
                                 </div>
                                 <div className="input-group">
-                                    <input className="input--style-3" type="email" placeholder="Correo electrónico" name="email" />
+                                    <input className="input--style-3" type="email" placeholder="Stock" name="stock" />
                                 </div>
                                 <div className="input-group">
-                                    <input className="input--style-3" type="text" placeholder="Teléfono" name="telefono" />
+                                    <input className="input--style-3" type="text" placeholder="Nombre Cliente" name="nombre-cliente" />
                                 </div>
-                                <div className="input-group">                                                                            
-                                        <select value={this.state.value} name="tipoPersona" className="opcion dropdown-toggle" onChange={this.handleChange}>
-                                            <option value="Tipo" hidden>Tipo de persona</option>
-                                            <option value="empleado">Empleado</option> 
-                                            <option value="cliente">Cliente</option>                                            
-                                            <option value="usuario">Usuario para el aplicativo</option>
-                                        </select>   
-                                        <div id="content-sublist">
-                                            {this.subListaTipo()}
-                                        </div>                                        
-                                    </div>
+                                <div className="input-group">
+                                    <input className="input--style-3" type="text" placeholder="Cédula Cliente" name="cedula-cliente" />
+                                </div>
                                 <div className="p-t-10 btn-group text-center">
-                                    <button className="btn btn--pill btn--green " type="submit">Crear</button>                                    
+                                <button className="btn btn--pill btn--green " type="submit">Ver</button>    
+                                    <button className="btn btn--pill btn--green " type="submit">Crear</button>                             
                                     <button className="btn btn--pill btn--green " type="submit">Actualizar</button>                                    
                                     <button className="btn btn--pill btn--green " type="submit">Eliminar</button>                                    
                                 </div>
@@ -317,4 +304,4 @@ class BarraNavegacion extends Component {
 };
 
 
-export default BarraNavegacion;
+export default Navegacion;
