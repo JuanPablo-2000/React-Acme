@@ -32,11 +32,11 @@ class Inicio extends Component{
 
                     <div className="social-icons">
                         <ul className="list-inline">
-                        <li><a href="#"><i className="fa"><FontAwesomeIcon icon={faFacebookF} /></i></a></li>
-                        <li><a href="#"><i className="fa"><FontAwesomeIcon icon={faTwitter} /></i></a></li>
-                        <li><a href="#"><i className="fa"><FontAwesomeIcon icon={faInstagram} /></i></a></li>
-                        <li><a href="#"><i className="fa"><FontAwesomeIcon icon={faPinterest} /></i></a></li>
-                        <li><a href="#"><i className="fa"><FontAwesomeIcon icon={faFacebookMessenger} /></i></a></li>
+                        <li><a href="https://www.facebook.com/"><i className="fa"><FontAwesomeIcon icon={faFacebookF} /></i></a></li>
+                        <li><a href="https://www.facebook.com/"><i className="fa"><FontAwesomeIcon icon={faTwitter} /></i></a></li>
+                        <li><a href="https://www.facebook.com/"><i className="fa"><FontAwesomeIcon icon={faInstagram} /></i></a></li>
+                        <li><a href="https://www.facebook.com/"><i className="fa"><FontAwesomeIcon icon={faPinterest} /></i></a></li>
+                        <li><a href="https://www.facebook.com/"><i className="fa"><FontAwesomeIcon icon={faFacebookMessenger} /></i></a></li>
                         </ul>
                     </div>
                 </div>	

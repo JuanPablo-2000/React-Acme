@@ -1,10 +1,12 @@
-import React, { useReducer } from "react";
+import React, { useReducer} from "react";
 import { DateRangeInput } from "@datepicker-react/styled";
 import { ThemeProvider } from "styled-components";
 
 import {es as locale} from 'date-fns/locale'
 import $ from "jquery";
 import { TinyAreaChart } from "@opd/g2plot-react";
+
+let aux = false;
 
 const initialState = {
   startDate: null,
@@ -14,21 +16,14 @@ const initialState = {
 
 
 function reducer(state, action) {
-  switch (action.type) {
-    case "focusChange":
-      {             
-        $('.graficas').css({
-          "transform": "translate(0,530px)",
-        /*  "-webkit-transform": "translate(0,450px)",
-          "-o-transform": "translate(0,450px)",
-          "-moz-transform": "translate(0,450px)"*/
-        });
-      }
+  console.log(action.type);
+  console.log(state);
+  switch (action.type) {      
+    case "focusChange":   
+      console.log("df");
       return { ...state, focusedInput: action.payload };
-    case "dateChange":
-      {
-        cambio();
-      }
+    case "dateChange":  
+      console.log("dffsds");          
       return action.payload;
     default:
       throw new Error();
@@ -36,14 +31,15 @@ function reducer(state, action) {
 }
 
 function cambio() {
-  $('.graficas').css({
-    "transform": "translate(0, -530px)",              
-  });
-  console.log("dfdgdf");
+  console.log("Hola");
+  let dato = $('.graficas').prop('style');
+  console.log(dato);
+  dato.removeProperty('transform');
 }
 
 function Fechas() {
   const [state, dispatch] = useReducer(reducer, initialState);
+
   return (    
     <ThemeProvider      
       theme={{
@@ -78,7 +74,8 @@ function Fechas() {
           startDatePlaceholder: 'Fecha de inicio',
           endDatePlaceholder: 'Fecha de inicio',
           close: 'Cerrar',          
-        }}                 
+        }}          
+               
         startDate={state.startDate} // Date or null
         endDate={state.endDate} // Date or null
         focusedInput={state.focusedInput} // START_DATE, END_DATE or null

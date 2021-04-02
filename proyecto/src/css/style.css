@@ -1376,3 +1376,13 @@ ul.autos {
 .bg-info.blockquote-custom-icon{
   background-color: #f8b739 !important;
 }
+
+
+/* ------------------------------- CRUD de USUARIOS  ------------------------------------------ */
+.desplazarGrap {
+  transform: translate(0,530px);
+}
+
+.contraerGrap {
+  transform: translate(0, 0px);
+}

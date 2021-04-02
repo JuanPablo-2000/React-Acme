@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom'
-import ReactDOM from 'react-dom'
+import { withRouter } from 'react-router-dom'
 import PropTypes  from "prop-types";
 // ------------------------ CSS y Boostrap ------------------------------------
 import '../css/style.css'
@@ -30,12 +29,14 @@ class login extends Component{
         }else $('#miBody').attr("id", "imagen-fondo");
     }
 
-    iniciarSesion() {                    
+    iniciarSesion() {  
+        let datos = '<h2>Hola como estan</h2>';
+        $('#content').append(datos);
         this.props.history.push('/UsuariosClientes');               
     }
 
     CrudVehiculos() {                    
-        this.props.history.push('/CrudVehiculos');               
+        //this.props.history.push('/CrudVehiculos');               
     }
     
     render(){ 
