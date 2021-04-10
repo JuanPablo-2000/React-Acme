@@ -20,7 +20,21 @@ class Vehiculos extends Component {
             <div className="card card-3">
               <div className="card-body">
                 <h2 className="titulo-crud"> Registro de Vehículos </h2>
-                <form method="POST">
+                <div className="p-t-10 btn-group text-center">
+                  <button className="btn btn--pill btn--green " type="submit">
+                    Ver
+                  </button>
+                  <button className="btn btn--pill btn--green " type="submit">
+                    Crear
+                  </button>
+                  <button className="btn btn--pill btn--green " type="submit">
+                    Actualizar
+                  </button>
+                  <button className="btn btn--pill btn--green " type="submit">
+                    Eliminar
+                  </button>
+                </div>
+                <form className="form_vehiculo" >
                   <div className="input-group">
                     <input
                       className="input--style-3"
@@ -32,9 +46,9 @@ class Vehiculos extends Component {
                   <div className="input-group">
                     <input
                       className="input--style-3"
-                      type="text"
-                      placeholder="Marca"
-                      name="marca"
+                      type="number"
+                      placeholder="Cedula del propietario"
+                      name="cedula"
                     />
                   </div>
                   <div className="input-group">
@@ -48,40 +62,42 @@ class Vehiculos extends Component {
                   <div className="input-group">
                     <input
                       className="input--style-3"
-                      type="email"
-                      placeholder="Stock"
+                      type="text"
+                      placeholder="Marca"
+                      name="marca"
+                    />
+                  </div>
+                  <div className="input-group">
+                    <div className="custom-radios">
+                      <div>
+                        <input type="radio" id="type_1" name="procede" />
+                        <label htmlFor="type_1">
+                          <span>
+                            <img
+                              src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg"
+                              alt="Checked Icon"
+                            />
+                          </span>
+                          Procedecia de terceros
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="input-group">
+                    <input
+                      className="input--style-3"
+                      type="number"
+                      placeholder="# Stock"
                       name="stock"
                     />
                   </div>
                   <div className="input-group">
                     <input
                       className="input--style-3"
-                      type="text"
-                      placeholder="Nombre Cliente"
-                      name="nombre-cliente"
+                      type="number"
+                      placeholder="Url de Imagen"
+                      name="img"
                     />
-                  </div>
-                  <div className="input-group">
-                    <input
-                      className="input--style-3"
-                      type="text"
-                      placeholder="Cédula Cliente"
-                      name="cedula-cliente"
-                    />
-                  </div>
-                  <div className="p-t-10 btn-group text-center">
-                    <button className="btn btn--pill btn--green " type="submit">
-                      Ver
-                    </button>
-                    <button className="btn btn--pill btn--green " type="submit">
-                      Crear
-                    </button>
-                    <button className="btn btn--pill btn--green " type="submit">
-                      Actualizar
-                    </button>
-                    <button className="btn btn--pill btn--green " type="submit">
-                      Eliminar
-                    </button>
                   </div>
                 </form>
               </div>

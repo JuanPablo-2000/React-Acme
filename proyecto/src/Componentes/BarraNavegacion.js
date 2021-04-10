@@ -25,19 +25,19 @@ class BarraNavegacion extends Component {
 
         // ------------------------ Atributos o estados ------------------------------------
         this.state = {            
-            showinfo: props.contentPage,            
+            showinfo: props.contentPage,                           
         }                
     }   
     
     render() {         
         return(       
-            <>
+            <>                
                 {this.navegacionYContenido()}
             </>
         );
     }   
 
-    navegacionYContenido() {
+    navegacionYContenido() {        
         return(
             <div>
                 <hr className="separador"></hr>                
@@ -150,8 +150,8 @@ class BarraNavegacion extends Component {
                         </nav>                                                                    
                         <h2 className="section-title"></h2>                          
                         {/* ------------------------------------- CONTENIDO DE LA PAGINA ----------------------- */}
-                        <br /> <br />
-                        {this.state.showinfo}
+                        <br /> <br />                        
+                        {this.state.showinfo}                        
                     </div> 
                 </div> 
             </div>    
