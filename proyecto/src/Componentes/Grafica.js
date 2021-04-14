@@ -1,41 +1,42 @@
-import React from "react";
+import React, { Component } from "react";
 import { LineChart, LineChartProps } from "@opd/g2plot-react";
 
-const config: LineChartProps = {
-  padding: "auto",
-  autoFit: true,
-  data: [
-    { mes: "Enero", value: 3 },
-    { mes: "Febrero", value: 4 },
-    { mes: "Marzo", value: 8 },
-    { mes: "Abril", value: 5 },
-    { mes: "Mayo", value: 4 },
-    { mes: "Junio", value: 6 },
-    { mes: "Julio", value: 7 },
-    { mes: "Agosto", value: 9 },
-    { mes: "Septiembre", value: 13 },
-    { mes: "Octubre", value: 13 },
-    { mes: "Noviembre", value: 13 },
-    { mes: "Diciembre", value: 13 },
-  ],
-  xField: "mes",
-  yField: "value",
-  smooth: true,
-  meta: {
-    mes: {
-      alias: "Mes"
-    },
-    value: {
-      alias: "# autos"
-    }
+class Graphic extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dataGraphic: props.setting,
+      metaData: props.meta,
+      show: true,
+    };
+    console.log("Mi configuracion", this.state.dataGraphic);
   }
-}; 
 
-export default () => (
-  <section className="graficas">    
-    <br/> <br/>    
-    <LineChart {...config} />
-    <br/> <br/>    <br/> <br/>    <br/> <br/>    
-   {/* <LineChart {...config1} />*/}
-  </section>
-);
+  render() {
+    return (
+      <>
+        {this.state.show ? (
+          <section className="graficas">
+            <br /> <br />
+            <LineChart {...this.propsLineChart()} />
+            <br /> <br /> <br /> <br /> <br /> <br />
+          </section>
+        ) : null}
+      </>
+    );
+  }
+
+  propsLineChart() {
+    const setting: LineChartProps = {
+      padding: "auto",
+      autoFit: true,
+      data: this.state.dataGraphic,
+      xField: "mes",
+      yField: "value",
+      smooth: true,    
+      meta: this.state.metaData,      
+    };
+    return setting;
+  }
+}
+export default Graphic;

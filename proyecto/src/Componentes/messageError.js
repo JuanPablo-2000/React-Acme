@@ -63,7 +63,7 @@ class ShowError extends Component{
     }
 
     showNotify() {
-        let typeClass = "toast "+ this.state.nameClass;
+        let typeClass = "toast alert"+ this.state.nameClass;
         return(            
             <>            
                 {/* NOTIFICACION DE ERROR O EXITO */}

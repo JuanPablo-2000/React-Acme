@@ -11,6 +11,10 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.scroll_table {
+  overflow-x: auto;
+}
+
 
 /* ------------------------------- Login ------------------------------------------ */
 #imagen-fondo {
@@ -718,7 +722,7 @@ a[data-toggle="collapse"] {
 }
 
 /* ------------------------------- Tabla de visualizacion de usuarios  ------------------------------------------ */
-.table-responsive.tabla_usuarios  {
+.table-responsive.tabla_usuarios, .table-responsive.tabla_registros  {
   display: none;
 }
 
@@ -745,7 +749,8 @@ a[data-toggle="collapse"] {
 }
 
 /* ------------------------------- Buscador  ------------------------------------------ */
-.alerta, .other_alert, .other_alert_1, .other_alert_2, .other_alert_3, .other_alert_4{
+.alerta, .other_alert, .other_alert_1, .other_alert_2, .other_alert_3, .other_alert_4,
+.other_alert_5{
   display: none;
 }
 
@@ -1152,7 +1157,7 @@ input {
 
 .input-group {
   position: relative;
-  margin-bottom: 33px;
+  margin-bottom: 40px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -1323,18 +1328,25 @@ select.opcion option {
   display: none;
 }
 
-#myToast, #myToast_error,  #myToast_error_1 {
+#myToast, #myToast_error,  #myToast_error_1, #myToast_success, #myToast_1,
+#myToast_error_2, #myToast_error_3 {
   position: absolute; 
   margin-top: 30px;
+  color: white;
   /*top: 0; */
   right: 0;
 }
 
-#myToast {
+#myToast, #myToast_1 {
   background-color: #eca503bd;
 }
 
-#myToast_error,  #myToast_error_1 {
+#myToast_success {
+  background-color: #08d234de;
+}
+
+#myToast_error,  #myToast_error_1, #myToast_error_2 ,
+#myToast_error_3 {
   background-color: #fd1010d1;
   color: white;
 }
@@ -1362,6 +1374,14 @@ select.opcion option {
 }
 
 /* ------------------------------- Dueño nuevo  ------------------------------------------ */
+.datos_owner2 {
+  display: contents;
+}
+
+.img-responsive.owner {
+  max-width: 455px;
+}
+
 .profile-card-4 {
   background-color: #fff;
   border-radius: 5px;
@@ -1387,7 +1407,7 @@ select.opcion option {
   left: 0px;
   right: 0px;
   top: -70px;
-  color: #fff;
+  color: rgb(0, 0, 0);
   font-size: 17px;
 }
 
@@ -1442,6 +1462,21 @@ select.opcion option {
 .nombre-nuevo {
   padding-top: 15px;
   color: black;
+}
+
+/* ------------------------------- Precios  ------------------------------------------ */
+.img_price {
+  padding-bottom: 40%;
+}
+
+.img-responsive.img_price {
+  max-width: 100%;
+}
+
+/* ------------------------------- Transacciones  ------------------------------------------ */
+.input-group.transaccion {
+  justify-content: center;
+  border-bottom: none;
 }
 
 /* ------------------------------- Historiales  ------------------------------------------ */
@@ -1615,6 +1650,23 @@ ul.autos {
 }
 
 /* ------------------------------- Fechas de publicacion  ------------------------------------------ */
+.searchbar_1.visible_searchbar {
+  display: block;
+  margin-bottom: 25px;
+}
+
+.toast.show.other_alert_3 {
+  display: contents;
+}
+
+.toast.show.other_alert_1 {
+  display: contents;
+}
+
+.toast.show.alerta, .toast.show.other_alert_2, .toast.show.other_alert_4 {
+  display: contents;
+}
+
 .blockquote-custom {
   margin-top: 20px;
   margin-left: 100px;
@@ -1641,7 +1693,7 @@ ul.autos {
 }
 
 .img-responsive {
-  max-width: 300px;
+  max-width: 100%;
 }
 
 .bg-info.blockquote-custom-icon {
@@ -1705,10 +1757,34 @@ ul.autos {
   margin-right: 20px;
   background-color: #f8b739;
 }
+.custom-radios input[type=radio]#type_2 + label span {
+  margin-right: 20px;
+  background-color: #f8b739;
+}
 .custom-radios input[type=radio]:checked + label span img {
   opacity: 1;
 }
 
 .separate_radio {
   padding-left: 30px;
+}
+
+.radios_vehiculos {
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.peticion_vehiculos.input-group {
+  justify-content: center;
+  border-bottom: none;
+}
+
+/* ------------------------------- Historiales ------------------------------------------ */
+.graphic_button.btn-group {
+  display: grid;
+  margin-bottom: 5%;
+}
+
+.content_date, .event_request_1.btn{
+  display: none;
 }

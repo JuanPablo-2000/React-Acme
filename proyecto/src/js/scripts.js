@@ -21,25 +21,6 @@ import $ from 'jquery'
     });
 }());
 
-/*------------------------------------- Buscador - Vacio  -----------------------------------------*/
-(function (){
-    if($('buscador').val === "") {
-        console.log("Esta vacio");
-    }else {
-        console.log("Tiene informacion");
-    }    
-}());
-
-/*------------------------------------- Tipo de persona  -----------------------------------------*/
-(function (){
-    $(".opcion").change(function() {
-        console.log("GHola", this.val);
-    })            
-}());
-
-
-/*------------------------------------- Datepicker  -----------------------------------------*/
-
 /*------------------------------------- Login Toolpid  -----------------------------------------*/
 (function() {    
     window.addEventListener('load', function() {              

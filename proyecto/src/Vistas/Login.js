@@ -8,7 +8,7 @@ import '../css/style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap';
 // ------------------------ JQUERY ------------------------------------
-import $ from 'jquery'
+import $, { post } from 'jquery'
 // ------------------------ Iconos e imagenes ------------------------------------
 import { faKey, faUser, faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -43,7 +43,7 @@ class login extends Component{
     /* Manejo de Login - Conexion al backend */
     iniciarSesion = (event) => {    
         event.preventDefault();                        
-        this.postLogin();        
+        this.getLogin();        
     }
 
     CrudVehiculos() {                    
@@ -51,16 +51,11 @@ class login extends Component{
     }
     
     /* Conexiones con el backend */
-    postLogin(){   
-        this.setState({showError: false}); // Estado de la ventana en falso para verificar si tiene que mostrarla de nuevo     
-        let datos = JSON.stringify({
-            nombre_usuario: $('#usuario').val(),
-            contrasenia: $('#password').val()
-        })
-        console.log(datos);
+    getLogin(){   
+        this.setState({showError: false}); // Estado de la ventana en falso para verificar si tiene que mostrarla de nuevo                    
         Axios({
-            headers: { "Access-Control-Allow-Origin": "*"},
-            method: "post",            
+            method: "POST",
+            headers: { "Access-Control-Allow-Origin": "*"},            
             url: "http://localhost:5000/www/login",
             data: {
                 nombre_usuario: $('#usuario').val(),
@@ -73,7 +68,7 @@ class login extends Component{
                 this.props.history.push('/UsuariosClientes');                    
             }            
         })
-        .catch((error) => {                   
+        .catch((error) => {             
             console.log("Error: " , error.response);
             let message = error.response.data.message;
             if(message === "404 - Error, Credenciales incorrectas" || message === "401 - Error, Credenciales incorrectas") {
@@ -81,8 +76,15 @@ class login extends Component{
                     messageError: 'Error con las credenciales',
                     showError: true, // Cambio el estado para mostrar la alerta
                 });                
+            }else if(message === "409 - Error, Usuario no existe" || "404 - Error, Usuario no existe") {
+                this.setState({
+                    messageError: 'El usuario no existe',
+                    showError: true, // Cambio el estado para mostrar la alerta
+                });    
             }
-        })        
+        })
+        $('#usuario').val('');                 
+        $('#password').val('');        
     }
 
     closeErrorMessage(){        
