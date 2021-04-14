@@ -4,7 +4,7 @@ USE backend_www;
 
 /* TABLA DE CLIENTES */
 CREATE TABLE clientes (
-    id INT(10) NOT NULL AUTO_INCREMENT ,
+    id_persona INT(10) NOT NULL AUTO_INCREMENT ,
     cedula INT(12) NOT NULL ,
     nombres VARCHAR(50) NOT NULL ,
     apellidos VARCHAR(50) NOT NULL ,
@@ -30,7 +30,7 @@ ALTER TABLE clientes
 
 /* TABLA DE USUARIOS */
 CREATE TABLE usuarios (
-    id INT(10) NOT NULL AUTO_INCREMENT ,
+    id_usuario INT(10) NOT NULL AUTO_INCREMENT ,
     cedula_id INT(12) NOT NULL ,
     nombre_usuario VARCHAR(50) NOT NULL ,
     contrasenia VARCHAR(100) NOT NULL , 
@@ -42,17 +42,17 @@ CREATE TABLE usuarios (
 
 /* TABLA DE VEHICULOS */
 CREATE TABLE vehiculos (
-    id INT(10) NOT NULL AUTO_INCREMENT ,
+    id_vehiculo INT(10) NOT NULL AUTO_INCREMENT ,
     placa VARCHAR(50) NOT NULL ,
     cedula_propietario INT(12) NOT NULL ,
     modelo VARCHAR(50) NOT NULL ,
     marca VARCHAR(50) NOT NULL ,
-    procedecia VARCHAR(20) NOT NULL ,    
+    procedencia VARCHAR(20) NOT NULL ,    
     stock BOOLEAN NOT NULL,
     img VARCHAR(500) NOT NULL,
     fecha_creado TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
     fecha_actualizado DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP ,
-    fecha_para_venta TIMESTAMP NULL, 
+    fecha_para_venta TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
     UNIQUE indice (id) ,
     PRIMARY KEY(placa) ,
     CONSTRAINT fk_ced_propietario FOREIGN KEY (cedula_propietario) REFERENCES clientes(cedula)
@@ -61,13 +61,14 @@ CREATE TABLE vehiculos (
 
 /* TABLE DE COMPRA */
 CREATE TABLE compras (
-    id INT(10) NOT NULL AUTO_INCREMENT ,
+    id_compra INT(10) NOT NULL AUTO_INCREMENT ,
     serial_compra VARCHAR(50) NOT NULL ,
     cedula_cliente INT(12) NOT NULL ,
-    placa_vh VARCHAR(50) NOT NULL,
+    placa_vh_compra VARCHAR(50) NOT NULL,
     valor_compra DOUBLE(15,2) NOT NULL,
     fecha_compra TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,    
     UNIQUE indice (id) , 
+    UNIQUE indice_1 (placa_vh) , 
     PRIMARY KEY(serial_compra) ,    
     CONSTRAINT fk_placa_compra FOREIGN KEY (placa_vh) REFERENCES vehiculos(placa) ,
     CONSTRAINT fk_ced_cliente FOREIGN KEY (cedula_cliente) REFERENCES clientes(cedula)
@@ -75,13 +76,14 @@ CREATE TABLE compras (
 
 /* TABLA DE VENTA */
 CREATE TABLE ventas (
-    id INT(10) NOT NULL AUTO_INCREMENT ,
+    id_venta INT(10) NOT NULL AUTO_INCREMENT ,
     serial_venta VARCHAR(50) NOT NULL ,
     propietario_nuevo INT(12) NOT NULL ,
-    placa_vh VARCHAR(50) NOT NULL ,
+    placa_vh_venta VARCHAR(50) NOT NULL ,
     valor_venta DOUBLE(15,2) NOT NULL ,
     fecha_venta_efectiva TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
     UNIQUE indice (id) ,
+    UNIQUE indice_1 (placa_vh) ,
     PRIMARY KEY(serial_venta) ,
     CONSTRAINT fk_propietario_nuevo FOREIGN KEY (propietario_nuevo) REFERENCES clientes(cedula) ,
     CONSTRAINT fk_placa_venta FOREIGN KEY (placa_vh) REFERENCES vehiculos(placa)

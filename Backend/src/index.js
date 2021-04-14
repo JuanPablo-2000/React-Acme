@@ -55,7 +55,10 @@ app.use((req, res, next) => {
 /* ------------ Rutas ------------ */
 app.use('/www', require('./routes/login'));
 app.use('/www', require('./routes/cruds'))
-
+app.use('/www', require('./routes/publications')) // Vista de publicaciones y precios
+app.use('/www', require('./routes/owners'))
+app.use('/www', require('./routes/transactions'));
+app.use('/www', require('./routes/histories'));
 
 
 /* ------------ Archivos publicos  ------------ */
