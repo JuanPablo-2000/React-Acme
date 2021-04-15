@@ -3,7 +3,7 @@ const morgan = require('morgan');
 const db = require('./database'); // Conexion a base de datos
 
 const session = require('express-session'); // Manejo de sesion en la base de datos
-const passport = require('passport'); // Metodos de auntenticacion
+//const passport = require('passport'); // Metodos de auntenticacion
 const flash = require('connect-flash'); //Manejo de mensajes de error
 const MySqlStore = require('express-mysql-session'); // Me permite guardar las sesiones dentro de la bd
 
@@ -14,7 +14,7 @@ const cors = require('cors');
 
 /* ------------ Inicializacion ------------ */
 const app = express();
-require('./lib/passport'); // Añadir las autenticaciones que se esta creando
+//require('./lib/passport'); // Añadir las autenticaciones que se esta creando
 
 
 /* ------------ Configuraciones ------------ */
@@ -44,16 +44,18 @@ app.use(session({
 }));
 app.use(flash()); // Manejo de errores (Mensajes)
 app.use(express.json());
-app.use(passport.initialize()); // Iniciar el middlewars passport pero no sabe como se van a manejar los datos
-app.use(passport.session()) // Crear sesion para passport
+//app.use(passport.initialize()); // Iniciar el middlewars passport pero no sabe como se van a manejar los datos
+//app.use(passport.session()) // Crear sesion para passport
 
 /* ------------ Variables globales ------------ */
 app.use((req, res, next) => {
+    app.locals.user = req.session.user;
     next();
 })
 
 /* ------------ Rutas ------------ */
 app.use('/www', require('./routes/login'));
+app.use('/www', require('./routes/auth'));
 app.use('/www', require('./routes/cruds'))
 app.use('/www', require('./routes/publications')) // Vista de publicaciones y precios
 app.use('/www', require('./routes/owners'))

@@ -62,7 +62,6 @@ router.get('/users/:cedula', async (req, res, next) => {
 });
 
 
-
 router.delete('/users/:cedula', async (req, res, next) => {
     const { cedula } = req.params;
     try {
@@ -282,22 +281,28 @@ router.get('/vehiclesStock', async (req, res, next) => {
 
 router.get('/vehicles/:placa', async (req, res, next) => {
     const { placa } = req.params;
-    try {
-        let table = await db.query('SELECT * FROM vehiculos t1 INNER JOIN compras t2 ON ' +
-            't1.placa = ? AND t2.placa_vh_compra = ?', [placa,placa]);
-        if(table.length > 0) {
-            res.status(200).send({
-                message: "Correcto",
-                vehicles: table[0],
-            })
-        }else {
-            res.status(404).send({
-                message: "404 - Error, No se encontro datos",
+    if(placa !== '') {
+        try {
+            let table = await db.query('SELECT * FROM vehiculos t1 INNER JOIN compras t2 ON ' +
+                't1.placa = ? AND t2.placa_vh_compra = ?', [placa,placa]);
+            if(table.length > 0) {
+                res.status(200).send({
+                    message: "Correcto",
+                    vehicles: table[0],
+                })
+            }else {
+                res.status(404).send({
+                    message: "404 - Error, No se encontro datos",
+                });
+            }
+        } catch (error) {
+            res.status(500).send({
+                message: "500 - Hubo un problema con la conexion, o la consulta a la base de datos",
             });
         }
-    } catch (error) {
-        res.status(500).send({
-            message: "500 - Hubo un problema con la conexion, o la consulta a la base de datos",
+    }else {
+        res.status(404).send({
+            message: "404 - Error, No se encontro datos",
         });
     }
 });
@@ -475,5 +480,51 @@ router.put('/vehicles/:placa', async (req, res, next) => {
         });
     }
 });
+
+router.get('/allVehicles', async (req, res)  => {
+    try {
+        let table = await db.query('SELECT * FROM (SELECT * FROM `vehiculos` t1 INNER JOIN compras t2 ON ' +            
+            't1.placa = t2.placa_vh_compra AND t1.stock > 0) ' +
+            't3 LEFT OUTER JOIN ventas t4 ON t3.placa = t4.placa_vh_venta ORDER BY t3.placa');
+        if(table.length > 0) {
+            res.status(200).send({
+                message: "Correcto",
+                vehicles: table,
+            })
+        }else {
+            res.status(404).send({
+                message: "No se encontraron datos",
+            })
+        }
+    } catch (error) {
+        res.status(500).send({
+            message: "Hubo un problema con la conexion, o la consulta a la base de datos",
+        });
+    }
+})
+
+router.get('/allVehicles/:placa', async (req, res)  => {
+    const { placa } = req.params;
+    try {
+        let row = await db.query('SELECT * FROM (SELECT * FROM `vehiculos` t1 INNER JOIN compras t2 ON ' +            
+            't1.placa = t2.placa_vh_compra AND t1.stock > 0 AND t1.placa = ? ) ' +
+            't3 LEFT OUTER JOIN ventas t4 ON t3.placa = t4.placa_vh_venta ORDER BY t3.placa', [placa]);
+        console.log(placa, row);
+        if(row.length > 0) {
+            res.status(200).send({
+                message: "Correcto",
+                vehicles: row[0],
+            })
+        }else {
+            res.status(404).send({
+                message: "No se encontraron datos",
+            })
+        }
+    } catch (error) {
+        res.status(500).send({
+            message: "Hubo un problema con la conexion, o la consulta a la base de datos",
+        });
+    }
+})
 
 module.exports = router;

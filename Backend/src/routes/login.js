@@ -1,4 +1,3 @@
-const e = require('express');
 const express = require('express');
 const router = express.Router();
 const db = require('../database'); // Conexion a base de datos
@@ -25,6 +24,8 @@ router.post('/login', async (req, res, next) => {
                 }                        
                 if(compare){ // Usuario y contrasenia correctas
                     if(user.contrasenia === password) {
+                        req.session.user = username;   
+                        //console.log("Login", req.session.user);                     
                         res.status(200).send({
                             message: "Correcto",
                         });
