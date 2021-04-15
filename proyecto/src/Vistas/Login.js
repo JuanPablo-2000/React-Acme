@@ -82,9 +82,9 @@ class login extends Component{
                     showError: true, // Cambio el estado para mostrar la alerta
                 });    
             }
-        })
-        $('#usuario').val('');                 
-        $('#password').val('');        
+            $('#usuario').val('');                 
+            $('#password').val('');     
+        })           
     }
 
     closeErrorMessage(){        

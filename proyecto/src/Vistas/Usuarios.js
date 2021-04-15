@@ -11,24 +11,26 @@ import $, { event } from "jquery";
 import {
   faPlusSquare,
   faSearch,
-  faUserEdit,
-  faUserTimes,
+  faUserEdit,  
   faExclamationTriangle,
   faCheckCircle,
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import foto from "../img/myphoto.jpg";
 
 class UsuariosClientes extends Component {
   constructor(props) {
     super();
+
+    this.getSession(); // Validar si esta logueado
+
     this.state = {
       messageError: "",
       showError: false,
       showNotify: false,
     };
+
     this.allCheck = this.allCheck.bind(this);
     this.buttonSearch = this.buttonSearch.bind(this);
     this.eventDelete = this.eventDelete.bind(this);
@@ -801,11 +803,11 @@ class UsuariosClientes extends Component {
       if (dato === undefined) dato = "Crear";
       console.log("Enviar", dato);
       switch (dato) {
-        case "Crear": {                    
+        case "Crear": {
           this.postUser(person);
           break;
         }
-        case "Actualizar": {          
+        case "Actualizar": {
           this.putUser();
           break;
         }
@@ -815,6 +817,22 @@ class UsuariosClientes extends Component {
 
   // ------------------------------------------------- BACKEND --------------------------------------
   /* Conexiones con el backend */
+  getSession() {
+    Axios({
+      url: "http://localhost:5000/www/auth",
+    })
+      .then((answer) => {
+        if (answer.data.message === "Logueado") {
+        } else {
+          //console.log("No esta logueado");
+          this.props.history.push("/Login");
+        }
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
+  }
+
   getAllUser() {
     Axios({
       url: "http://localhost:5000/www/users",
@@ -1086,7 +1104,7 @@ class UsuariosClientes extends Component {
           autohide: true,
         });
         $("#myToast").toast("show");
-        $('.form_create').trigger('reset');
+        $(".form_create").trigger("reset");
         $("#aux_radio").prop("checked", true);
       })
       .catch((error) => {
@@ -1097,7 +1115,7 @@ class UsuariosClientes extends Component {
           autohide: true,
         });
         $("#myToast_error").toast("show");
-        $('#cedula').val('');
+        $("#cedula").val("");
         $(".invalid_cedula").show("slow");
       });
   }
@@ -1139,7 +1157,7 @@ class UsuariosClientes extends Component {
           autohide: true,
         });
         $("#myToast").toast("show");
-        $(".form_create").trigger("reset"); // Limpio el formulario        
+        $(".form_create").trigger("reset"); // Limpio el formulario
         $("#aux_radio").prop("checked", true);
       })
       .catch((error) => {
@@ -1148,7 +1166,7 @@ class UsuariosClientes extends Component {
           delay: 4000,
           autohide: true,
         });
-        $('#cedula').val('');
+        $("#cedula").val("");
         $(".invalid_cedula").show("slow");
         $("#myToast_error_1").toast("show");
       });

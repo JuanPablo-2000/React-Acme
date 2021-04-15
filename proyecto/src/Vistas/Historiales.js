@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 class Historial extends Component {
   constructor(props) {
     super(props);
-    const location = this.props.location.pathname;
+    const location = this.props.location.pathname;    
     let message = "", path = '';
     if (location === "/Historial-venta") {
       message = "Historial de ventas";
