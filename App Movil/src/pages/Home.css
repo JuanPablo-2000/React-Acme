@@ -1,0 +1,129 @@
+/*--------------------------------------------------- GENERALES -------------------------------*/
+@font-face {
+    font-family: 'Car';
+    src: url('../font/nolluqa-font/NolluqapersonaluseRegular-d9o57.otf');
+}
+
+@font-face {
+    font-family: 'Car_body';
+    src: url('../font/toona-font/ToonapersonaluseRegular-vma67.otf');
+}
+
+/*--------------------------------------------------- VISTA INICIAL -------------------------------*/
+ion-slides {
+    height: 100%;
+}
+
+ion-content.slideStart {
+    --ion-background-color: none;
+    background-image: url('../img/fondo_1.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.layer {
+    height: 100%;
+    background: rgb(66,63,63);
+    background: linear-gradient(180deg, rgba(66,63,63,1) 0%, rgba(210,194,194,0.195703781512605) 59%, rgba(66,63,63,1) 99%);
+}
+
+ion-label.welcome_title {
+    font-family: Car !important;
+    display: block;
+    color: white;
+    font-size: 4.5rem;
+    padding-top: 30px;
+}
+
+ion-label.welcome {
+    font-family: Car_body !important;
+    display: block;
+    font-size: 3rem;
+    color: white;    
+}
+
+ion-label.welcome_user {
+    padding-top: 25%;
+}
+
+/*--------------------------------------------------- VISTA DE VEHICULOS -------------------------------*/
+.content_body {    
+    width: 100%;
+    height: 100%;    
+    background: linear-gradient(180deg, rgb(74 70 70) 2%, rgba(255,255,255,2.020046) 49%, rgb(79 76 76) 99%)
+}
+
+ion-content.main {
+    height: 86%;
+    border-top-left-radius: 11%;
+    border-bottom-right-radius: 10%;
+    background-color: white !important;
+    --ion-background-color: none;
+}
+
+.title_main {
+    text-align: left;
+    padding-left: 10px;
+}
+
+ion-label.title_vehicle {    
+    position: fixed;
+    width: 210px;
+    font-family: "Car_body";
+    font-size: 4rem;
+    color: white;    
+}
+
+ion-avatar.icon_user {
+    display: inline-block;
+    margin-left: 80%;
+    margin-top: 2%;
+}
+
+.cardVehicle {
+    width: 100%;
+    box-shadow: 0 0 15px 9px #dcd7d7c2;    
+}
+
+.centerImg {
+    justify-content: center;    
+    display: flex;        
+}
+
+.itemSeparation {
+    padding-top: 20px;    
+}
+
+ion-avatar.size {
+    width: 110px;
+    height: 110px;
+}
+
+.spacingInfo {
+    padding-top: 10px; 
+    display: flex;    
+    flex-direction: column;    
+}
+
+.centerImg {
+    justify-content: center;    
+    display: flex;        
+}
+
+ion-label.title_search {
+    font-family: Car;
+    font-size: 2rem;
+    padding-bottom: 5px;
+}
+
+ion-chip.margin_chip {
+    margin-top: 40%;
+}
+
+ion-card.content_search {    
+    display: none;
+}
+
+ion-searchbar.search {
+    --border-radius: 30px
+}
